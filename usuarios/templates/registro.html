@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>StayOn - Crear Cuenta</title>
+    <link rel="stylesheet" href="{% static 'usuarios/css/index.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">StayOn</div>
+      </div>
+      <div class="registration-form">
+        <div class="form-wrapper">
+          <div class="form-content">
+            <h2>CREAR CUENTA</h2>
+            <form method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label class="label-group">Nombre</label>
+                <input
+                  type="text"
+                  name="nombre"
+                  placeholder="Nombre"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="label-group">Telefono</label>
+                <input
+                  type="tel"
+                  name="telefono"
+                  placeholder="Teléfono"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="label-group">Correo</label>
+                <input
+                  type="email"
+                  name="correo"
+                  placeholder="Correo Electrónico"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="label-group">Contraseña</label>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Contraseña"
+                  required
+                />
+              </div>
+              <button type="submit" class="submit-btn">Registrar</button>
+              <div class="form-footer">
+                <a href="{% url 'inicio' %}" class="register-link">
+                  ¿No tienes cuenta? <strong>Crear cuenta</strong>
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

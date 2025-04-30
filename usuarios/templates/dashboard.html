@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | StayOn</title>
+    <link rel="stylesheet" href="{% static 'usuarios/css/dashboard.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container-header">
+        <img
+          src="{% static 'images/StayOn.png' %}"
+          alt="StayOn Logo"
+          class="logo"
+        />
+        <nav class="user-nav">
+          <span id="userName" class="user-name">Hola,</span>
+          
+          <div class="left">
+            <a href="#" id="logoutBtn" class="logout-btn">Cerrar sesión</a>
+            <div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="dashboard">
+      <aside class="sidebar">
+        <ul>
+          <li><a href="#" onclick="dashboard(); return false;">Inicio</a></li>
+          <li><a href="#" onclick="academy(); return false;">Sección Académica</a></li>
+          <li><a href="#">Sección Socioeconómica</a></li>
+          <li><a href="#">Reportes</a></li>
+        </ul>
+        <hr />
+    <div class="upload-section">
+      <form id="form-csv">
+        <label for="csv-file" style="color: white;">Subir CSV</label><br />
+        <input type="file" id="csv-file" accept=".csv" /><br />
+        <button type="submit">Predecir</button>
+      </form>
+  </div>
+      </aside>
+
+      <main class="main-content">
+        
+        <div id="panel">
+          <div class="info-contenedor">
+            <div class="info-texto">
+              <h1>Panel de Control</h1>
+              <p class="subtitle">
+                Visualiza y analiza el comportamiento académico de los estudiantes
+              </p>
+            </div>
+            <div id="total_data">
+              <p id="total">Total de datos</p>
+              <p id="dat"></p>
+            </div>
+          </div>
+        </div>
+        <section id="dashboard-secction">
+        <div class="cards">
+          <div class="card">
+            <h3 class="label_grafica">Gráfica de Target</h3>
+            <canvas id="graficaPredicciones" width="400" height="400"></canvas>
+          </div>
+          <div class="card">
+            <h3 class="label_grafica">Gráfica de Target</h3>
+            <canvas id="graficaBecas" width="400" height="400"></canvas>
+          </div>
+          <div class="card">
+            <h3 class="label_grafica">Gráfica de Target</h3>
+            <canvas id="graficaGenero" width="400" height="400"></canvas>
+          </div>
+        </div>
+        <div class="cards2">
+          <div class="card2">
+            <h3 class="label_grafica2">Gráfica de Target</h3>
+            <canvas id="graficaEdad" width="400" height="300"></canvas>
+          </div>
+          <div class="card3">
+            <h3 class="label_grafica2">Gráfica de Target</h3>
+            <canvas id="graficaBeca" width="400" height="300"></canvas>
+          </div>
+        </div>
+      </section>
+
+    <section id="academy-secction" style="display: none;">
+      <div class="cards">
+         <div class="card">
+           <h3 class="label_grafica">Gráfica de Target</h3>
+           <canvas id="graficaInscritasAprobadas" width="400" height="300"></canvas>
+         </div>
+         <div class="card">
+          <h3 class="label_grafica">Gráfica de Target</h3>
+          <canvas id="graficaInscritasAprobadasSem2" width="400" height="300"></canvas>
+         </div>
+           <div class="card">
+            <h3 class="label_grafica">Gráfica de Target</h3>
+            <canvas id="graficaBoxplotGradesPrediction" width="400" height="300"></canvas>
+        </div>
+      </div>
+      </section>
+      </main>
+    </div>
+    <script src="{% static 'js/dashboard.js' %}"></script>
+  </body>
+</html>
